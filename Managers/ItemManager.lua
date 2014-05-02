@@ -15,6 +15,26 @@ UOExt.Managers.ItemManager.GetItemFromBackpack = function(itemType)
     return {}
 end
 
+UOExt.Managers.ItemManager.GetItemFromContainer = function(itemType, containerID)
+    local items = UOExt.Managers.ItemManager.GetItemsFromContainer(itemType, containerID)
+
+    if(#items> 0) then
+        return items[1]
+    end
+      
+    return {}
+end
+
+UOExt.Managers.ItemManager.GetItemsFromContainer = function(itemType, containerID)
+    local items = World().WithType(itemType).InContainer(containerID).Items
+
+    if(#items > 0) then
+        return items
+    end
+      
+    return {}
+end
+
 UOExt.Managers.ItemManager.GetCorpsesWithinRange = function(range)
   local corpses = Ground().WithType(8198).InRange(range).Items
       

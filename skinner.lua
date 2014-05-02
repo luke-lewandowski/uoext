@@ -10,7 +10,7 @@ Skinner.Options = {
     ["knifeType"] = 3922,
     ["scissorsType"] = 3999,
     ["distance"] = 2
-} 
+}
 
 Skinner.FindKnife = function()
     return UOExt.Managers.ItemManager.GetItemFromBackpack(Skinner.Options.knifeType)
@@ -26,28 +26,25 @@ end
 
 Skinner.GetHides = function (containerID)
     local hidesType = 4217
-    local hides = World().WithType(4217).InContainer(containerID).Items
-      
+    local hides = UOExt.Managers.ItemManager.GetItemsFromContainer(hidesType, containerID)
+    
     if(#hides > 0) then
         return hides
     end
-      
+
     return {}                 
 end
 
 Skinner.CutCorps = function (corpsID, knifeItem)
       
     if(knifeItem ~= nil and corpsID ~= nil) then
-        -- Cutting corps to get hides
-        UO.LTargetID = corpsID
-        knifeItem.Use()
-        FluentUO.Action.WaitForAction(false)
-        UO.Macro(22, 0) -- Last target
+        local corps = World().WithID(corpsID).Items[1]
+        UOExt.Managers.ItemManager.UseItemOnItem(knifeItem, corps)
     end
 end
 
 Skinner.CutHides = function(containerID, scissorsItem)
-      
+
     print("Cutting hides...")
       
     if(containerID ~= nil and scissorsItem ~= nill) then
@@ -57,10 +54,7 @@ Skinner.CutHides = function(containerID, scissorsItem)
          
         for khides,hides in pairs(hidesBackpack) do
             print("Cutting hides " .. hides.Name)
-            UO.LTargetID = hides.ID
-            scissorsItem.Use()
-            FluentUO.Action.WaitForAction(false)
-            UO.Macro(22, 0) -- Last target
+            UOExt.Managers.ItemManager.UseItemOnItem(scissorsItem, hides)
             end 
     else
         print("Unable to find container or scissors for cutting hides")
@@ -96,25 +90,20 @@ Skinner.Run = function()
             
             -- Open corps
             corps.Use()
-         
-            --DebugProperty(corps)
 			
-			
-				Skinner.CutCorps(corps.ID, knife)
-				Skinner.cutHistory:push(corps.ID)
-			
-         
-            
-         
+			Skinner.CutCorps(corps.ID, knife)
+			Skinner.cutHistory:push(corps.ID)
+
+            -- Wait for corps to open
+            wait(1000)
+
             local hidesWorld = Skinner.GetHides(corps.ID)
          
             print("Looking for hides. Found " .. #hidesWorld)
          
             for khides,hides in pairs(hidesWorld) do
-                print("Dragging " .. hides.Name)
-                hides.Drag()
-                wait(1000)
-                UO.DropC(Skinner.Options.hideContainer)
+                print("Moving " .. hides.Name)
+                UOExt.Managers.ItemManager.MoveItemToContainer(hides, Skinner.Options.hideContainer)
             end
             else
                 print("Body already skinned. Skipping")
