@@ -1,0 +1,2355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li><strong>FluentUO</strong></li>
+	
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>FluentUO</code></h1>
+
+<p>Makes searching for objects in the world of Ultima Online easy using a natural fluent interface. </p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name">snicker7</td></tr>
+
+</table>
+</p>
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Backpack">Backpack</a>&nbsp;()</td>
+	<td class="summary">An interface returning access to items in the characters backpack.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Equipment">Equipment</a>&nbsp;()</td>
+	<td class="summary">An interface returning access to items found on the character's paperdoll.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Action.Item.Drag">FluentUO.Action.Item.Drag</a>&nbsp;(id, amt, nonblockingcall)</td>
+	<td class="summary">Uses the object action delay waiting methods and invokes a drag on the object ID passed as the 'id' parameter.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Action.Item.Use">FluentUO.Action.Item.Use</a>&nbsp;(id, nonblockingcall)</td>
+	<td class="summary">Uses the object action delay waiting methods and invokes macro 17 (use last object) on the object ID passed as the 'id' parameter.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Action.ResetDelay">FluentUO.Action.ResetDelay</a>&nbsp;()</td>
+	<td class="summary">Used to reset the object action delay.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Action.WaitForAction">FluentUO.Action.WaitForAction</a>&nbsp;(nonblockingcall)</td>
+	<td class="summary">Used to wait before performing object actions that are dependent on the global action object delay.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer">FluentUO.FilteredItemContainer</a>&nbsp;()</td>
+	<td class="summary">A class implementation for returning a chainable, filterable collection of items.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Equipped">FluentUO.FilteredItemContainer.Equipped</a>&nbsp;()</td>
+	<td class="summary">Filters the Item table to only include items on the characters paperdoll.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.InAnyContainer">FluentUO.FilteredItemContainer.InAnyContainer</a>&nbsp;()</td>
+	<td class="summary">Filters the Item table to only objects found in containers.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.InBackpack">FluentUO.FilteredItemContainer.InBackpack</a>&nbsp;(recurse)</td>
+	<td class="summary">Filters the Item table to include only items in the backpack.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.InContainer">FluentUO.FilteredItemContainer.InContainer</a>&nbsp;(...)</td>
+	<td class="summary">Filters the Item table by the container id.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.InContainerType">FluentUO.FilteredItemContainer.InContainerType</a>&nbsp;(...)</td>
+	<td class="summary">Filters the Item table by the containers type.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.InRange">FluentUO.FilteredItemContainer.InRange</a>&nbsp;(nRange)</td>
+	<td class="summary">Filters the Item table to objects only within the specified distance.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Not">FluentUO.FilteredItemContainer.Not</a>&nbsp;()</td>
+	<td class="summary">Toggles the boolean flag to adjust results returned by the next filter.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.OnGround">FluentUO.FilteredItemContainer.OnGround</a>&nbsp;()</td>
+	<td class="summary">Filters the Item table to only objects found on the ground.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Options">FluentUO.FilteredItemContainer.Options</a>&nbsp;(option, value)</td>
+	<td class="summary">Used to set options for this instance of the FilteredItemContainer.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Update">FluentUO.FilteredItemContainer.Update</a>&nbsp;()</td>
+	<td class="summary">Forces a nullification of the item cache, forcing FluentUO to perform a new search for items.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Visible">FluentUO.FilteredItemContainer.Visible</a>&nbsp;()</td>
+	<td class="summary">Filters the Item table to only visible objects.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.Where">FluentUO.FilteredItemContainer.Where</a>&nbsp;(conditional)</td>
+	<td class="summary">Filters the Item table according to the provided function or conditional string which should return true if the item remains in the collection.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithCol">FluentUO.FilteredItemContainer.WithCol</a>&nbsp;(...)</td>
+	<td class="summary">Filters the Item table by the FindCol of the item.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithID">FluentUO.FilteredItemContainer.WithID</a>&nbsp;(...)</td>
+	<td class="summary">Filters the Item table by the ID of the item.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithName">FluentUO.FilteredItemContainer.WithName</a>&nbsp;(pattern, ...)</td>
+	<td class="summary">Filters the Item table to objects with names matching the specified pattern.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty">FluentUO.FilteredItemContainer.WithProperty</a>&nbsp;(sProperty)</td>
+	<td class="summary">Filters the Item table to objects matching the specified property criteria.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).Between">FluentUO.FilteredItemContainer.WithProperty(sProperty).Between</a>&nbsp;(t)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property between the specified values </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).EqualTo">FluentUO.FilteredItemContainer.WithProperty(sProperty).EqualTo</a>&nbsp;(value)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property equal to the specified value.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).Exists">FluentUO.FilteredItemContainer.WithProperty(sProperty).Exists</a>&nbsp;()</td>
+	<td class="summary">Filters the item table to include only objects having the specified property.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThan">FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThan</a>&nbsp;(value)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property greater than the specified value </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThanOrEqualTo">FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThanOrEqualTo</a>&nbsp;(value)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property greater than or equal to the specified value </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThan">FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThan</a>&nbsp;(value)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property less than the specified value </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThanOrEqualTo">FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThanOrEqualTo</a>&nbsp;(value)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property less than or equal to the specified value </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithProperty(sProperty).Like">FluentUO.FilteredItemContainer.WithProperty(sProperty).Like</a>&nbsp;(pattern)</td>
+	<td class="summary">Filters the item table to include only objects having the specified property matching the specified pattern </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.WithType">FluentUO.FilteredItemContainer.WithType</a>&nbsp;(...)</td>
+	<td class="summary">Filters the Item table by the Type of the item.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.m_Instance">FluentUO.FilteredItemContainer.m_Instance</a>&nbsp;(filterstack)</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_ParseTypeOrID">FluentUO.FilteredItemContainer.p_ParseTypeOrID</a>&nbsp;(argument)</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_Proxy">FluentUO.FilteredItemContainer.p_Proxy</a>&nbsp;(t)</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_Refresh">FluentUO.FilteredItemContainer.p_Refresh</a>&nbsp;()</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_Scan">FluentUO.FilteredItemContainer.p_Scan</a>&nbsp;()</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_Update">FluentUO.FilteredItemContainer.p_Update</a>&nbsp;()</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.FilteredItemContainer.p_WithKind">FluentUO.FilteredItemContainer.p_WithKind</a>&nbsp;(kind)</td>
+	<td class="summary">Private.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.GetItem">FluentUO.GetItem</a>&nbsp;(...)</td>
+	<td class="summary">Wraps the UO.GetItem function to return a table with object indexers rather than individual values.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.GetProperty">FluentUO.GetProperty</a>&nbsp;(item)</td>
+	<td class="summary">Wraps UO.Property(nID) and parses the properties into a table format for easy reading.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.Active.Dist">FluentUO.Item.Active.Dist</a>&nbsp;()</td>
+	<td class="summary">Returns the "live" distance from an object to the character's position.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.Active.Name">FluentUO.Item.Active.Name</a>&nbsp;()</td>
+	<td class="summary">Returns the "live" uncached name of an object, always.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.Active.Property">FluentUO.Item.Active.Property</a>&nbsp;()</td>
+	<td class="summary">Returns the "live" uncached property of an object, always.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.Drag">FluentUO.Item.Drag</a>&nbsp;(amt, nonblockingcall)</td>
+	<td class="summary">Invokes event macro 17 on the object with proper object action delays.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.InvalidateProperties">FluentUO.Item.InvalidateProperties</a>&nbsp;()</td>
+	<td class="summary">Invalidates the cached property and name values on the object.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Item.Use">FluentUO.Item.Use</a>&nbsp;(nonblockingcall)</td>
+	<td class="summary">Invokes event macro 17 on the object with proper object action delays.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Options">FluentUO.Options</a>&nbsp;(option, value)</td>
+	<td class="summary">Used to get or set global options for FluentUO at runtime.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Utils.BitwiseXor">FluentUO.Utils.BitwiseXor</a>&nbsp;(a, b)</td>
+	<td class="summary">Bitwise XOR - thanks to Reuben Thomas and BitUtils http://lua-users.org/wiki/BitUtils and Boydon on the EUO forums for doing the hard work and actually finding this :P </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Utils.ToEUOX">FluentUO.Utils.ToEUOX</a>&nbsp;(decid)</td>
+	<td class="summary">Converts a decimal value type or ID to the EUO string version of the type or id.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FluentUO.Utils.ToOpenEUO">FluentUO.Utils.ToOpenEUO</a>&nbsp;(euoid)</td>
+	<td class="summary">Converts a string value type or ID to the decimal version of the type or id.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Ground">Ground</a>&nbsp;()</td>
+	<td class="summary">An interface returning access to all items on the ground.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#World">World</a>&nbsp;()</td>
+	<td class="summary">An interface returning access to all currently found items.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#FilteredItemContainer">FilteredItemContainer</a></td>
+	<td class="summary">The FilteredItemContainer table.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Item">Item</a></td>
+	<td class="summary">The item object table contains all of the standard fields returned by UO.GetItem as well as some FluentUO specific functionality to enhance usage.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Options">Options</a></td>
+	<td class="summary">Options, can be set globally or for the specific FilteredItemContainer.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Property">Property</a></td>
+	<td class="summary">The property table is produced by FluentUO.GetProperty and is always populated with at least the Name and RawProperty fields.</td>
+	</tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Backpack"></a><strong>Backpack</strong>&nbsp;()</dt>
+<dd>
+An interface returning access to items in the characters backpack.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>An instance of FluentUO.FilteredItemContainer pre-filtered to only items found in the users backpack. Includes all subcontainers as well.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#FilteredItemContainerFluentUO.FilteredItemContainer"> -->
+	<li><a href="#FluentUO.FilteredItemContainer">
+		FluentUO.FilteredItemContainer</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="Equipment"></a><strong>Equipment</strong>&nbsp;()</dt>
+<dd>
+An interface returning access to items found on the character's paperdoll.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>An instance of FluentUO.FilteredItemContainer pre-filtered to only items equipped on the character.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#FilteredItemContainerFluentUO.FilteredItemContainer"> -->
+	<li><a href="#FluentUO.FilteredItemContainer">
+		FluentUO.FilteredItemContainer</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Action.Item.Drag"></a><strong>FluentUO.Action.Item.Drag</strong>&nbsp;(id, amt, nonblockingcall)</dt>
+<dd>
+Uses the object action delay waiting methods and invokes a drag on the object ID passed as the 'id' parameter.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>id</em></code>: The ID of the item to drag
+	</li>
+	
+	<li>
+	  <code><em>amt</em></code>: Optional. The amount of stack to drag. Defaults to 65535
+	</li>
+	
+	<li>
+	  <code><em>nonblockingcall</em></code>: Optional. Should the object action delay be non-blocking? Defaults to false.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>true if the item was picked up, false if it is a non-blocking call and an action cannot be performed at this time.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Action.Item.Use"></a><strong>FluentUO.Action.Item.Use</strong>&nbsp;(id, nonblockingcall)</dt>
+<dd>
+Uses the object action delay waiting methods and invokes macro 17 (use last object) on the object ID passed as the 'id' parameter.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>id</em></code>: The ID of the item to use
+	</li>
+	
+	<li>
+	  <code><em>nonblockingcall</em></code>: Optional. Should the object action delay be non-blocking? Defaults to false.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>true if macro 17 was invoked, false if it is a non-blocking call and an action cannot be performed at this time.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Action.ResetDelay"></a><strong>FluentUO.Action.ResetDelay</strong>&nbsp;()</dt>
+<dd>
+Used to reset the object action delay.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>FluentUO.Action.ResetDelay()</pre></ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#FluentUO.Action.WaitForAction"> -->
+	<li><a href="#FluentUO.Action.WaitForAction">
+		FluentUO.Action.WaitForAction</li>
+	</a>
+	
+	<!-- <li><a href="#FluentUO.Action.Item.Use"> -->
+	<li><a href="#FluentUO.Action.Item.Use">
+		FluentUO.Action.Item.Use</li>
+	</a>
+	
+	<!-- <li><a href="#FluentUO.Action.Item.Drag"> -->
+	<li><a href="#FluentUO.Action.Item.Drag">
+		FluentUO.Action.Item.Drag</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Action.WaitForAction"></a><strong>FluentUO.Action.WaitForAction</strong>&nbsp;(nonblockingcall)</dt>
+<dd>
+Used to wait before performing object actions that are dependent on the global action object delay. Can also be called as a non-blocking call and will return false if the timespan of the delay has not passed. The delay is taken from the global FluentUO.Options.ActionDelay value in milliseconds.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>nonblockingcall</em></code>: Optional. if true, this will not stop execution but will return true or false if the object action delay has passed. Defaults to false.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>FluentUO.Action.WaitForAction() -- This will delay execution until the delay has passed</pre></li>
+	
+	<li><pre class=example>FluentUO.Action.WaitForAction(true) -- This will return false if the object action delay has not passed</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>true if the object delay has passed, false if a non-blocking call is issued and the delay has not passed</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#OptionsFluentUO.Options"> -->
+	<li><a href="#FluentUO.Options">
+		FluentUO.Options</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer"></a><strong>FluentUO.FilteredItemContainer</strong>&nbsp;()</dt>
+<dd>
+A class implementation for returning a chainable, filterable collection of items. This is the main class in FluentUO. Globals like World, Ground, Equipped, and Backpack are all just instances of this class. This provides the scanning and filtering capabilities that are the "core" of FluentUO.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local items = FluentUO.FilteredItemContainer().Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>An instance of the FilteredItemContainer</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#WorldWorld"> -->
+	<li><a href="#World">
+		World</li>
+	</a>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#GroundGround"> -->
+	<li><a href="#Ground">
+		Ground</li>
+	</a>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#BackpackBackpack"> -->
+	<li><a href="#Backpack">
+		Backpack</li>
+	</a>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#EquipmentEquipment"> -->
+	<li><a href="#Equipment">
+		Equipment</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Equipped"></a><strong>FluentUO.FilteredItemContainer.Equipped</strong>&nbsp;()</dt>
+<dd>
+Filters the Item table to only include items on the characters paperdoll.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local myEQ = World().Equipped().Items</pre></li>
+	
+	<li><pre class=example>local myEQ = Equipment().Items -- a global alias for the above</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#EquipmentEquipment"> -->
+	<li><a href="#Equipment">
+		Equipment</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.InAnyContainer"></a><strong>FluentUO.FilteredItemContainer.InAnyContainer</strong>&nbsp;()</dt>
+<dd>
+Filters the Item table to only objects found in containers.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local items = World().InAnyContainer().Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.InBackpack"></a><strong>FluentUO.FilteredItemContainer.InBackpack</strong>&nbsp;(recurse)</dt>
+<dd>
+Filters the Item table to include only items in the backpack.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>recurse</em></code>: Optional. True if the all child items of the backpack should be returned.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local backpackitems = World().InBackpack().Items</pre></li>
+	
+	<li><pre class=example>local allbackpackitems = World().InBackpack(true).Items</pre></li>
+	
+	<li><pre class=example>local allbackpackitems = Backpack().Items -- Just a global alias for the above</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#BackpackBackpack"> -->
+	<li><a href="#Backpack">
+		Backpack</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.InContainer"></a><strong>FluentUO.FilteredItemContainer.InContainer</strong>&nbsp;(...)</dt>
+<dd>
+Filters the Item table by the container id. Optionally searches all subcontainers of the specified container as well.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: The container IDs to filter by. The final parameter is optional, and should be a boolean value: true if items in subcontainers of this container should be returned.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local items = World().InContainer(1225).Items</pre></li>
+	
+	<li><pre class=example>local items = World().InContainer(1554,12390,819,true).Items --will return items in all subcontainers as well.</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.InContainerType"></a><strong>FluentUO.FilteredItemContainer.InContainerType</strong>&nbsp;(...)</dt>
+<dd>
+Filters the Item table by the containers type. Full support for 'old euo' style types as parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: The container IDs to filter by.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local itemsInBags = World().InContainerType("CKF").Items</pre></li>
+	
+	<li><pre class=example>local items = World.InContainerType(1234,114,192).Items</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.InRange"></a><strong>FluentUO.FilteredItemContainer.InRange</strong>&nbsp;(nRange)</dt>
+<dd>
+Filters the Item table to objects only within the specified distance.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>nRange</em></code>: The distance to limit returned items by.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local nearby = World().InRange(4).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Not"></a><strong>FluentUO.FilteredItemContainer.Not</strong>&nbsp;()</dt>
+<dd>
+Toggles the boolean flag to adjust results returned by the next filter.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local notvisible = World().Not().Visible()</pre></li>
+	
+	<li><pre class=example>local faraway = World().OnGround().Not().InRange(4)</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.OnGround"></a><strong>FluentUO.FilteredItemContainer.OnGround</strong>&nbsp;()</dt>
+<dd>
+Filters the Item table to only objects found on the ground.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local grounditems = World().OnGround().Items</pre></li>
+	
+	<li><pre class=example>local grounditems = Ground().Items -- a global alias for the above</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#GroundGround"> -->
+	<li><a href="#Ground">
+		Ground</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Options"></a><strong>FluentUO.FilteredItemContainer.Options</strong>&nbsp;(option, value)</dt>
+<dd>
+Used to set options for this instance of the FilteredItemContainer. Will always inherit options from the global options if the option is not explicitly set on this instance. If you call Options() with no params, it will return a table of the current options set for this instance.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>option</em></code>: Either a table of key-value pairs to set options for, or a single string option
+	</li>
+	
+	<li>
+	  <code><em>value</em></code>: (only required if option is a string) The value to set the specified option to.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>World().Options({FindVisible = true,FindParents = true}).Items</pre></li>
+	
+	<li><pre class=example>Backpack().Options("FindVisible",true).Items</pre></li>
+	
+	<li><pre class=example>local currentFilterOptions = myFilter.Options()</pre></li>
+	
+</ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#OptionsFluentUO.Options"> -->
+	<li><a href="#FluentUO.Options">
+		FluentUO.Options</li>
+	</a>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#OptionsOptions"> -->
+	<li><a href="#Options">
+		Options</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Update"></a><strong>FluentUO.FilteredItemContainer.Update</strong>&nbsp;()</dt>
+<dd>
+Forces a nullification of the item cache, forcing FluentUO to perform a new search for items.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local backpackreagentfilter = Backpack().WithType(reagenttypes)</pre></li>
+	
+	<li><pre class=example>local items = backpackreagentfilter.Update().Items</pre></li>
+	
+	<li><pre class=example>local items = backpackreagentfilter.Live().Items -- alias for Update()</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Visible"></a><strong>FluentUO.FilteredItemContainer.Visible</strong>&nbsp;()</dt>
+<dd>
+Filters the Item table to only visible objects.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local visible = World().Visible().Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.Where"></a><strong>FluentUO.FilteredItemContainer.Where</strong>&nbsp;(conditional)</dt>
+<dd>
+Filters the Item table according to the provided function or conditional string which should return true if the item remains in the collection. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>conditional</em></code>: The conditional string or callback function.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>World().Where(function(item) return item.Dist() < 4 and item.Type == 210 end).Items --returns items within 4 tiles having a type of 210</pre></li>
+	
+	<li><pre class=example>World().Where("item.Stack > 50 and item.Stack < 100").Items --returns items with stack greater than 50 but less than 100 </pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithCol"></a><strong>FluentUO.FilteredItemContainer.WithCol</strong>&nbsp;(...)</dt>
+<dd>
+Filters the Item table by the FindCol of the item.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: The Hues(s) of the item to filter by.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local itemsHued2406 = World().WithCol(2406).Items</pre></li>
+	
+	<li><pre class=example>local itemsHued2406 = World().WithHue(2406).Items --WithHue is just an alias</pre></li>
+	
+	<li><pre class=example>local items = World().WithHue(2406,2407,2408).Items --Matches any of the specified hues</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithID"></a><strong>FluentUO.FilteredItemContainer.WithID</strong>&nbsp;(...)</dt>
+<dd>
+Filters the Item table by the ID of the item. Supports 'old EUO' style IDs (not sure why you'd need to use that though).
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: The ID(s) of the item to filter by.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local item = World().WithID(item.ID).Items[1]</pre></li>
+	
+	<li><pre class=example>local items = World().WithID(1235,"UDUBAPS",18923).Items</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithName"></a><strong>FluentUO.FilteredItemContainer.WithName</strong>&nbsp;(pattern, ...)</dt>
+<dd>
+Filters the Item table to objects with names matching the specified pattern.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>pattern</em></code>: The pattern(s) to check. Accepts multiple patterns or tables of patterns.
+	</li>
+	
+	<li>
+	  <code><em>...</em></code>: Additional patterns to match. Multiple patterns will be OR'd.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local tailors = World().WithName({"Tailor","Weaver"}).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty"></a><strong>FluentUO.FilteredItemContainer.WithProperty</strong>&nbsp;(sProperty)</dt>
+<dd>
+Filters the Item table to objects matching the specified property criteria. Properties without a numerical value will either be nil or true, properties with one numerical value will either be a number or nil, properties with one string value will either be a string or nil, and properties with more than one numerical value will either be a table of those values or nil.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>sProperty</em></code>: The property to check or a function accepting the item's property collection returning a boolean on whether or not to keep the item in the table.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local manaleech = World().WithProperty("Hit Mana Leech").GreaterThan(4).Items</pre></li>
+	
+	<li><pre class=example>local manaleech = World().WithProperty(function(props) return props.HitManaLeech ~= nil and props.HitManaLeech > 4 end).Items</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer or a collection of criteria quantifiers.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).Between"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).Between</strong>&nbsp;(t)</dt>
+<dd>
+Filters the item table to include only objects having the specified property between the specified values
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>t</em></code>: a table with the minimum and maximum values that the property should fall between
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local stealingpractice = World().InContainer(stealfrom).WithProperty("Weight").Between({9,12}).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).EqualTo"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).EqualTo</strong>&nbsp;(value)</dt>
+<dd>
+Filters the item table to include only objects having the specified property equal to the specified value.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>value</em></code>: The value to compare with
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local nightsight = World().WithProperty("Night Sight").EqualTo(true).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).Exists"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).Exists</strong>&nbsp;()</dt>
+<dd>
+Filters the item table to include only objects having the specified property.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local nightsight = World().WithProperty("Night Sight").Exists().Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThan"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThan</strong>&nbsp;(value)</dt>
+<dd>
+Filters the item table to include only objects having the specified property greater than the specified value
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>value</em></code>: The value to compare with
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local mageitems = World().WithProperty("Magery").GreaterThan(10).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThanOrEqualTo"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).GreaterThanOrEqualTo</strong>&nbsp;(value)</dt>
+<dd>
+Filters the item table to include only objects having the specified property greater than or equal to the specified value
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>value</em></code>: The value to compare with
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local stufftosteal = Ground().WithProperty("Artifact Rarity").GreaterThanOrEqualTo(9).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThan"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThan</strong>&nbsp;(value)</dt>
+<dd>
+Filters the item table to include only objects having the specified property less than the specified value
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>value</em></code>: The value to compare with
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local mageweps = World().WithProperty("Mage Weapon").LessThan(-27).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThanOrEqualTo"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).LessThanOrEqualTo</strong>&nbsp;(value)</dt>
+<dd>
+Filters the item table to include only objects having the specified property less than or equal to the specified value
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>value</em></code>: The value to compare with
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local stuffIcanCarry = Ground().WithProperty("Weight").LessThanOrEqualTo(maxweight - curweight).Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithProperty(sProperty).Like"></a><strong>FluentUO.FilteredItemContainer.WithProperty(sProperty).Like</strong>&nbsp;(pattern)</dt>
+<dd>
+Filters the item table to include only objects having the specified property matching the specified pattern
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>pattern</em></code>: a Lua style pattern string to match.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local leechweps = World().WithProperty("RawProperty").Like("Hit %a+ Leech").Items</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.WithType"></a><strong>FluentUO.FilteredItemContainer.WithType</strong>&nbsp;(...)</dt>
+<dd>
+Filters the Item table by the Type of the item. Has full support for 'old EUO' style type identifiers.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: The Type(s) of the item to filter by.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local items = World().WithType(1337).Items</pre></li>
+	
+	<li><pre class=example>local ingots = World().WithType("ENK").Items.</pre></li>
+	
+	<li><pre class=example>local items = World().WithType(1234,4562,1284).Items</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.m_Instance"></a><strong>FluentUO.FilteredItemContainer.m_Instance</strong>&nbsp;(filterstack)</dt>
+<dd>
+Private. Returns the public instance of this FilteredItemContainer.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>filterstack</em></code>: This is the current stack of filters for this chain
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_ParseTypeOrID"></a><strong>FluentUO.FilteredItemContainer.p_ParseTypeOrID</strong>&nbsp;(argument)</dt>
+<dd>
+Private. Parses parameters passed to WithID or WithType to support "old" style EUO IDs and Types in the format of "ENK" or "ENK_TNK" as well as decimal Types and IDs. Also supports tables. Even recursive tables. For people who want to piss me off.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>argument</em></code>: The argument to parse
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>A table with decimal values of all the parsed IDs.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_Proxy"></a><strong>FluentUO.FilteredItemContainer.p_Proxy</strong>&nbsp;(t)</dt>
+<dd>
+Private. Intercepts all function calls on a certain table and adds a closure around the function for having fun later on. The closure is then added to the filterStack table. The new closure will return a reference to the current filter chain instance, or if the function returns a table of subfilters (as is the case with WithProperty) it will return a proxied version of that table.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>t</em></code>: The table whose function calls to intercept.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The table being proxied.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_Refresh"></a><strong>FluentUO.FilteredItemContainer.p_Refresh</strong>&nbsp;()</dt>
+<dd>
+Private. Refreshes the filtered item collection by re-executing all filters in the filter chain.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_Scan"></a><strong>FluentUO.FilteredItemContainer.p_Scan</strong>&nbsp;()</dt>
+<dd>
+Private. Wraps the UO.ScanItems method with calls to FluentUO.GetItem to populate the Items table in the FilteredItemContainer. Populates the table with both visible and invisible items and sets the Visible flag on the Item accordingly.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>a table of item tables from FluentUO.GetItem.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#FluentUO.GetItem"> -->
+	<li><a href="#FluentUO.GetItem">
+		FluentUO.GetItem</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_Update"></a><strong>FluentUO.FilteredItemContainer.p_Update</strong>&nbsp;()</dt>
+<dd>
+Private. Initiates a new item scan for this FilteredItemContainer.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.FilteredItemContainer.p_WithKind"></a><strong>FluentUO.FilteredItemContainer.p_WithKind</strong>&nbsp;(kind)</dt>
+<dd>
+Private. Filters the Item table to only objects with the specific FindKind value.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>kind</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>This instance of the FilteredItemContainer.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.GetItem"></a><strong>FluentUO.GetItem</strong>&nbsp;(...)</dt>
+<dd>
+Wraps the UO.GetItem function to return a table with object indexers rather than individual values. Also adds several enhancements such as item.Dist() which gives the distance based on the current world position.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>...</em></code>: Parameters to pass to UO.GetItem
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local items = FluentUO.GetItem(index)</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>A table with item data from UO.GetItem</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.GetProperty"></a><strong>FluentUO.GetProperty</strong>&nbsp;(item)</dt>
+<dd>
+Wraps UO.Property(nID) and parses the properties into a table format for easy reading.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>item</em></code>: A valid Item table. Should have at least the item.ID value.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>local itemProperties = FluentUO.GetProperty(item)</pre></li>
+	
+	<li><pre class=example>local strengthreq = itemProperties.StrengthRequirement</pre></li>
+	
+	<li><pre class=example>local isBlessed = itemProperties.Blessed or false</pre></li>
+	
+</ul>
+
+
+
+<h3>Return value:</h3>
+<ul>A table with the properties of the item and their values.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#PropertyProperty"> -->
+	<li><a href="#Property">
+		Property</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.Active.Dist"></a><strong>FluentUO.Item.Active.Dist</strong>&nbsp;()</dt>
+<dd>
+Returns the "live" distance from an object to the character's position.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The distance from character to object</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.Active.Name"></a><strong>FluentUO.Item.Active.Name</strong>&nbsp;()</dt>
+<dd>
+Returns the "live" uncached name of an object, always. Expensive call.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The of the object</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.Active.Property"></a><strong>FluentUO.Item.Active.Property</strong>&nbsp;()</dt>
+<dd>
+Returns the "live" uncached property of an object, always. Expensive call.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The property table for the object</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#PropertyProperty"> -->
+	<li><a href="#Property">
+		Property</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.Drag"></a><strong>FluentUO.Item.Drag</strong>&nbsp;(amt, nonblockingcall)</dt>
+<dd>
+Invokes event macro 17 on the object with proper object action delays.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>amt</em></code>: Optional. The amount of stack to drag. Defaults to 65535
+	</li>
+	
+	<li>
+	  <code><em>nonblockingcall</em></code>: Optional. Should the object action delay be
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>true if the item was picked up, false if it is a non-blocking call and an action cannot be performed at this time.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#FluentUO.Action.Item.Drag"> -->
+	<li><a href="#FluentUO.Action.Item.Drag">
+		FluentUO.Action.Item.Drag</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.InvalidateProperties"></a><strong>FluentUO.Item.InvalidateProperties</strong>&nbsp;()</dt>
+<dd>
+Invalidates the cached property and name values on the object.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Item.Use"></a><strong>FluentUO.Item.Use</strong>&nbsp;(nonblockingcall)</dt>
+<dd>
+Invokes event macro 17 on the object with proper object action delays.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>nonblockingcall</em></code>: Optional. Should the object action delay be non-blocking? Defaults to false.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>true if macro 17 was invoked, false if it is a non-blocking call and an action cannot be performed at this time.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#FluentUO.Action.Item.Use"> -->
+	<li><a href="#FluentUO.Action.Item.Use">
+		FluentUO.Action.Item.Use</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Options"></a><strong>FluentUO.Options</strong>&nbsp;(option, value)</dt>
+<dd>
+Used to get or set global options for FluentUO at runtime. If you omit the parameters to the Options() call, the table with the currently set global options will be returned.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>option</em></code>: Either a table of key-value pairs to set options for, or a single string option
+	</li>
+	
+	<li>
+	  <code><em>value</em></code>: (only required if option is a string) The value to set the specified option to.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul>
+	
+	<li><pre class=example>FluentUO.Options({FindVisible = true,FindParents = true})</pre></li>
+	
+	<li><pre class=example>FluentUO.Options("FindVisible",true)</pre></li>
+	
+	<li><pre class=example>local currentGlobalOptions = FluentUO.Options()</pre></li>
+	
+</ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#FluentUO.FilteredItemContainer.Options"> -->
+	<li><a href="#FluentUO.FilteredItemContainer.Options">
+		FluentUO.FilteredItemContainer.Options</li>
+	</a>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#OptionsOptions"> -->
+	<li><a href="#Options">
+		Options</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Utils.BitwiseXor"></a><strong>FluentUO.Utils.BitwiseXor</strong>&nbsp;(a, b)</dt>
+<dd>
+Bitwise XOR - thanks to Reuben Thomas and BitUtils http://lua-users.org/wiki/BitUtils and Boydon on the EUO forums for doing the hard work and actually finding this :P
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>a</em></code>: First parameter to perform a bitwise XOR operation on.
+	</li>
+	
+	<li>
+	  <code><em>b</em></code>: Second parameter to perform a bitwise XOR operation on.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>XOR'd value of a and b.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Utils.ToEUOX"></a><strong>FluentUO.Utils.ToEUOX</strong>&nbsp;(decid)</dt>
+<dd>
+Converts a decimal value type or ID to the EUO string version of the type or id. Thx to Boydon from the EUO forums for coming up with this. Only minor modifications have been made.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>decid</em></code>: String value of a type or ID to be converted to the decimal format.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>Converted decimal value of the type or id in euoid.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FluentUO.Utils.ToOpenEUO"></a><strong>FluentUO.Utils.ToOpenEUO</strong>&nbsp;(euoid)</dt>
+<dd>
+Converts a string value type or ID to the decimal version of the type or id. Thanks to Boydon from the EUO forums for coming up with this. Only minor modifications have been made.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>euoid</em></code>: String value of a type or ID to be converted to the decimal format.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>Converted decimal value of the type or id in euoid.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Ground"></a><strong>Ground</strong>&nbsp;()</dt>
+<dd>
+An interface returning access to all items on the ground.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>An instance of FluentUO.FilteredItemContainer pre-filtered to only items found on the ground.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#FilteredItemContainerFluentUO.FilteredItemContainer"> -->
+	<li><a href="#FluentUO.FilteredItemContainer">
+		FluentUO.FilteredItemContainer</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="World"></a><strong>World</strong>&nbsp;()</dt>
+<dd>
+An interface returning access to all currently found items.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>An instance of FluentUO.FilteredItemContainer</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/FluentUO.html#FilteredItemContainerFluentUO.FilteredItemContainer"> -->
+	<li><a href="#FluentUO.FilteredItemContainer">
+		FluentUO.FilteredItemContainer</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+</dl>
+
+
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="FilteredItemContainer"></a><strong>FilteredItemContainer</strong></dt>
+<dd>The FilteredItemContainer table. Returns additional filters as as well as collections of items.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Items</em></code>: The collection of item objects currently matching the filter.
+	</li>
+	
+	<li>
+	  <code><em>First</em></code>: The first item object in the Items collection matching the filter.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="Item"></a><strong>Item</strong></dt>
+<dd>The item object table contains all of the standard fields returned by UO.GetItem as well as some FluentUO specific functionality to enhance usage. These item objects are returned by FluentUO.GetItem.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>ID</em></code>: The item ID from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Type</em></code>: The item type from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Kind</em></code>: The item kind from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>ContID</em></code>: The ID of the parent container from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>X</em></code>: The X coordinate from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Y</em></code>: The Y coordinate from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Z</em></code>: The Z coordinate from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Stack</em></code>: The count of items in the stack from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Rep</em></code>: The reputation of the item/NPC from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Col</em></code>: The hue or findcol of the item from UO.GetItem
+	</li>
+	
+	<li>
+	  <code><em>Property</em></code>: The property table retrieved with FluentUO.GetProperty. This is a table of property values parsed from the property string. The values are cached until Item.InvalidateProperties() is called.
+	</li>
+	
+	<li>
+	  <code><em>Name</em></code>: The name of the object retrieved with FluentUO.GetProperty. The value is cached until Item.InvalidateProperties() is called.
+	</li>
+	
+	<li>
+	  <code><em>Parent</em></code>: The parent item that contains this item.
+	</li>
+	
+	<li>
+	  <code><em>RootParent</em></code>: The root parent item containing this object.
+	</li>
+	
+	<li>
+	  <code><em>Active.Dist</em></code>: The "live" distance from the character to the object
+	</li>
+	
+	<li>
+	  <code><em>Active.Property</em></code>: The "live" property of the item. Warning, this is a expensive call
+	</li>
+	
+	<li>
+	  <code><em>Active.Name</em></code>: The "live" name of the item. Warning, this is an expensive call
+	</li>
+	
+	<li>
+	  <code><em>InvalidateProperties</em></code>: Invalidates the property cache on the item
+	</li>
+	
+	<li>
+	  <code><em>Use</em></code>: Uses the item. See FluentUO.Item.Use.
+	</li>
+	
+	<li>
+	  <code><em>Drag</em></code>: Drags the item. See FluentUO.Item.Drag.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="Options"></a><strong>Options</strong></dt>
+<dd>Options, can be set globally or for the specific FilteredItemContainer. Use FluentUO.Options(option,value) or FluentUO.Options(tOptions) where tOptions is a table with key value pairs corresponding to the following options:<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>NiceGlobals</em></code>: This will make FluentUO register the "Global" filters such as World, Backpack, Ground, and Equipped on the FluentUO table instead of globally. Default is false. NOTE: This must be set BEFORE you load FluentUO. Please see the usage example: FluentUO = { Options = { NiceGlobals = true } } dofile('fluentuo.lua')
+	</li>
+	
+	<li>
+	  <code><em>FindVisible</em></code>: This will make FluentUO run two scan item loops during the initial scan in order to populate the Visible property on Item objects. If you don't care about filtering by visibility, you can turn this off. Default is on.
+	</li>
+	
+	<li>
+	  <code><em>FindParents</em></code>: This will make FluentUO populate the Parent and RootParent properties on Item objects during the initial scan. If you don't need to access these properties or will not be doing recursive container searches, you can turn this off and find some optimization. However, if you call Parent or RootParent on any Item that is not pre-populated, it will be expensive to determine as a new scanitem loop must be executed for each item, rather than all items being populated simultaneously. Default is on.
+	</li>
+	
+	<li>
+	  <code><em>ActionDelay</em></code>: Global only. Cannot be set per instance of FilteredItemContainers.This is the object action delay in milliseconds for using or moving items. Default is 900ms.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="Property"></a><strong>Property</strong></dt>
+<dd>The property table is produced by FluentUO.GetProperty and is always populated with at least the Name and RawProperty fields. All other fields will be populated by parsing each property line. Fields can either be true/nil, single number valued, or number pair valued. An example of the first is Item.Property.Exceptional, which will be true if the property exists and nil if it does not. An example of a single numbered value is Item.Property.StrengthRequirement. Number pair valued is something like Item.Property.WeaponDamage, where two values are listed. The Property table can be accessed with case-insensitive, spaces-omitted names of the properties expected to be found. In addition to that, elemental resists and weapon damages will be added to the Item.Property.Resists and Item.Property.Damage tables respectively.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Name</em></code>: The name of the item
+	</li>
+	
+	<li>
+	  <code><em>RawProperty</em></code>: The "raw" property string of the item found using UO.Property.
+	</li>
+	
+	<li>
+	  <code><em>Resists</em></code>: The elemental resistances on an item they exist.
+	</li>
+	
+	<li>
+	  <code><em>Damage</em></code>: The elemental damage types on an item if they exist.
+	</li>
+	
+	<li>
+	  <code><em>misc</em></code>: Each line of the property string will be parsed into table fields as best as possible.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>
