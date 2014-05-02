@@ -1,4 +1,4 @@
-dofile(".\\..\\FluentUO\\FluentUO.lua")
+dofile(".\\..\\Lib\\FluentUO\\FluentUO.lua")
 
 -- Namespaces
 UOExt = UOExt or {}
@@ -6,7 +6,7 @@ UOExt.Managers = UOExt.Managers or {}
 UOExt.Managers.ItemManager = UOExt.Managers.ItemManager or {}
 
 UOExt.Managers.ItemManager.GetItemFromBackpack = function(itemType)
-    local item = Backpack().WithType(Skinner.Options.knifeType).Items
+    local item = Backpack().WithType(itemType).Items
 
     if(#item > 0) then
         return item[1]

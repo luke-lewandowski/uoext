@@ -1,5 +1,6 @@
-dofile(".\\FluentUO\\FluentUO.lua")
-dofile(".\\Managers\\LimitedStack.lua")
+dofile(".\\Lib\\FluentUO\\FluentUO.lua")
+dofile(".\\Structs\\LimitedStack.lua")
+dofile(".\\Managers\\ItemManager.lua")
 
 Skinner = Skinner or {}
 
@@ -12,33 +13,15 @@ Skinner.Options = {
 } 
 
 Skinner.FindKnife = function()
-    local knifes = Backpack().WithType(Skinner.Options.knifeType).Items
-
-    if(#knifes > 0) then
-        return knifes[1]
-    end
-      
-    return {}
+    return UOExt.Managers.ItemManager.GetItemFromBackpack(Skinner.Options.knifeType)
 end
 
 Skinner.FindScissors = function()
-    local scissors = Backpack().WithType(Skinner.Options.scissorsType).Items
-
-    if(#scissors > 0) then
-        return scissors[1]
-    end
-      
-    return {}
+    return UOExt.Managers.ItemManager.GetItemFromBackpack(Skinner.Options.scissorsType)
 end
 
 Skinner.FindCorpses = function()
-    local corpses = Ground().WithType(8198).InRange(Skinner.Options.distance).Items
-      
-    if(#corpses > 0) then
-        return corpses
-    end
-      
-    return {}
+    return UOExt.Managers.ItemManager.GetCorpsesWithinRange(Skinner.Options.distance)
 end
 
 Skinner.GetHides = function (containerID)
@@ -93,7 +76,7 @@ DebugProperty = function(prop)
     end
 end
 
-Skinner.cutHistory = SimpleStack:Create(10)
+Skinner.cutHistory = UOExt.Structs.LimitedStack:Create(10)
 
 Skinner.Run = function()
 
