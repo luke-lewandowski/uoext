@@ -72,8 +72,6 @@ UOExt.Managers.SkinningManager.CutAndLoot = function(corpsItem)
     print("Found following cutting item: " .. knife.Name)
     print("Found scissors: " .. scissors.Name)
 
-    UOExt.Managers.SkinningManager.CutHides(UOExt.Managers.SkinningManager.Options.hideContainer, scissors)
-
     if(corpsItem ~= nil and knife ~= nil) then
         -- Open corps
         corpsItem.Use()
@@ -93,6 +91,8 @@ UOExt.Managers.SkinningManager.CutAndLoot = function(corpsItem)
             UOExt.Managers.ItemManager.MoveItemToContainer(hides, UOExt.Managers.SkinningManager.Options.hideContainer)
         end
     end
+
+    UOExt.Managers.SkinningManager.CutHides(UOExt.Managers.SkinningManager.Options.hideContainer, scissors)
 end
 
 UOExt.Managers.SkinningManager.Run = function()
