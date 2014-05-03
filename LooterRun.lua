@@ -77,7 +77,7 @@ Looter.Run = function()
 end
 
 while true do
-	print("LooterRun running." .. )
+	print("LooterRun running.")
     Looter.Run()
     wait(2000)
 end
