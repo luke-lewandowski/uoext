@@ -1,3 +1,18 @@
+--[[
+;----------------------------------
+; Script Name: LooterRun.lua
+; Author: Luke Lewandowski
+; Version: 1.0
+; Client Tested with: 7.0.34.22
+; EUO version tested with: OpenEUO
+; Shard OSI / FS: FS
+; Purpose: 
+; - Find and loots any nearby corpses for 
+; items specified in "lootItems" below. 
+; - Skinning can be enabled by changing "useSkinning" to true
+; 	- It requires Scissors and dagger in your backpack.
+;----------------------------------]]
+
 dofile(".\\Lib\\FluentUO\\FluentUO.lua")
 dofile(".\\Structs\\LimitedStack.lua")
 dofile(".\\Managers\\ItemManager.lua")
@@ -23,6 +38,8 @@ Looter.Options = {
 
     ["useSkinning"] = true
 }
+
+-- #### Nothing past this line needs changing #### --
 
 -- Main method that needs to be run in order to 
 -- 1. Find corpses around you
@@ -60,7 +77,7 @@ Looter.Run = function()
 end
 
 while true do
-	print("LooterRun started.")
+	print("LooterRun running." .. )
     Looter.Run()
     wait(2000)
 end

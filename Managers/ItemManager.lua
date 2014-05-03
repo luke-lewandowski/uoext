@@ -66,3 +66,18 @@ UOExt.Managers.ItemManager.MoveItemToContainer = function(item, containerID)
   
   return false
 end
+
+UOExt.Managers.ItemManager.GetTargetID = function()
+  local current = UO.LTargetID
+  UO.LTargetID = 0
+
+  while (UO.LTargetID == 0) do
+    UO.TargCurs = true
+    wait(2000)
+  end
+
+  local newTarget = UO.LTargetID
+  UO.LTargetID = current
+  
+  return newTarget
+end
