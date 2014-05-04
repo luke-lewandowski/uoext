@@ -20,9 +20,10 @@ dofile(".\\Managers\\SkinningManager.lua")
 
 --[[
 	- Find two animals
-	- Cause a fight (provo or tamed animals)
+	- Cause a fight (provo or tamed animals) (TODO)
 	- Check health and if below threshold start healing
 	- Repeat
+    - Once above 70 it uses magery to poison both animals.
 	
 	TODO: Shift some of this methods and logic out to the animal manager.
 
@@ -36,7 +37,9 @@ VetTrainer.Options = {
 	["healthThreshold"] = 50, 
 
 	-- Attempt to stop fight when out of bandages
-	["stopFightWhenBandagesRunOut"] = true
+	["stopFightWhenBandagesRunOut"] = true,
+
+    ["usePoison"] = true
 }
 
 local ShowMessage = function(message, objectID)
@@ -45,6 +48,38 @@ local ShowMessage = function(message, objectID)
 	end
 	UO.ExMsg(objectID, message)
 	print(objectID .. ":" .. message)
+end
+
+local PoisonTarget = function(targetID)
+    local temp = UO.LTargetID
+    UO.LTargetID = targetID
+    UO.Macro(15, 19) -- Poison
+    UOExt.Core.WaitForTarget()
+    UO.Macro(22, 0) -- Last target
+    UO.LTargetID = temp
+end
+
+local PosionIfNotPoisoned = function(targetID)
+
+    if(targetID ~= nil) then
+        print(targetID)
+        UO.StatBar(targetID)
+        
+        local health, col = GetHitBarLife(targetID)
+        col = col or "unknown"
+        
+        print(health .. " " .. col)
+        
+        if(col ~= "green")then
+            PoisonTarget(targetID)
+               
+            -- Resets war/peace
+            UO.Macro(6, 0) -- war/peace
+            wait(600)
+            UO.Macro(6, 0)
+        end
+    end
+
 end
 
 ShowMessage("Target your first animal")
@@ -62,14 +97,21 @@ if(animal1 ~= nil and animal2 ~= nil) then
    
     while true do
         local bandages = UOExt.Managers.ItemManager.GetItemFromContainer(3617, UO.BackpackID)
+        local nightshades = UOExt.Managers.ItemManager.GetItemFromContainer(3976, UO.BackpackID)
         local isHealingRequired = false
 
-        if(bandages == nil) then
-            UO.Macro(1,0, "all follow me")
+        -- If you run out of regents or bandages
+        -- Run away and scream "all stay"
+        if(bandages == nil or (VetTrainer.Options.usePosion and nightshades == nil)) then
+            UO.Macro(1,0, "all stay")
+            UO.Move(UO.CharPosX - 10, UO.CharPosY - 10)
+            print("Stopping script at:")
+            print(gettime())
+            break
         end
          
-        local ahp1 = UOExt.Core.ConvertToInt(GetHitBarLife(animal1))
-        local ahp2 = UOExt.Core.ConvertToInt(GetHitBarLife(animal2))
+        local ahp1, acol1 = GetHitBarLife(animal1)
+        local ahp2, acol2 = GetHitBarLife(animal2)
          
         if(animal1 == animal2)then
          	-- Both animals are the same!
@@ -102,6 +144,21 @@ if(animal1 ~= nil and animal2 ~= nil) then
 	        	isHealingRequired = true
 	        end
      	end
+
+        local norm, real = UO.GetSkill("Vete")
+        if(norm > 700 and VetTrainer.Options.usePoison) then
+            -- Change threshold to be 90 -- since we gotta cure
+            VetTrainer.Options.healthThreshold = 90
+
+            if(ahp1 > 95)then
+                print("Using poisoning" .. animal1)
+                PosionIfNotPoisoned(animal1)
+            end
+            if(ahp2 > 95)then
+                print("Using poisoning" .. animal2)
+                PosionIfNotPoisoned(animal2)
+            end
+        end
         
      	-- Change how often script runs dependable on whats currently done
         if(isHealingRequired)then 
