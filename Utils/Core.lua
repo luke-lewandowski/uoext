@@ -19,3 +19,37 @@ UOExt.Core.WaitForTarget = function()
 
 	return false
 end
+
+UOExt.Core.LoadFile = function(filename)
+	local fileOpen = openfile(filename, "r+")
+
+	if(fileOpen ~= nil)then
+		local content = fileOpen:read("*a")
+		fileOpen:close()
+		return content
+	else
+		return nil
+	end
+end
+
+UOExt.Core.SaveFile = function(filename, content)
+	local fileOpen = openfile(filename, "w+")
+
+	if(fileOpen ~= nil)then
+		local content = fileOpen:write(content)
+		fileOpen:close()
+		return content
+	else
+		return nil
+	end
+end
+
+UOExt.Core.ShowMessageBox = function(message, title, button)
+	if(buttons == nil) then buttons = 0 end
+	if(title == nil) then title = "Message" end
+
+	form = Obj.Create("TMessageBox")
+	form.Button = button
+	form.Title = title
+	form.Show(message)
+end

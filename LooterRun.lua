@@ -2,17 +2,19 @@
 ;----------------------------------
 ; Script Name: LooterRun.lua
 ; Author: Luke Lewandowski
-; Version: 1.0
+; Version: 1.0.1
 ; Client Tested with: 7.0.34.22
 ; EUO version tested with: OpenEUO
 ; Shard OSI / FS: FS
 ; Purpose: 
 ; - Find and loots any nearby corpses for 
 ; items specified in "lootItems" below. 
+; - Corpes belonging to you will be fully loted.
 ; - Skinning can be enabled by changing "useSkinning" to true
 ; 	- It requires Scissors and dagger in your backpack.
 ;----------------------------------]]
 
+dofile(".\\Utils\\Core.lua")
 dofile(".\\Lib\\FluentUO\\FluentUO.lua")
 dofile(".\\Structs\\LimitedStack.lua")
 dofile(".\\Managers\\ItemManager.lua")
@@ -24,6 +26,9 @@ Looter = Looter or {}
 Looter.History = UOExt.Structs.LimitedStack:Create(20)
 
 Looter.Options = {
+	-- Items to loot
+	-- Note: If its detected that corps belongs to you 
+	-- then it will loot all items
 	["lootItems"] = {
 		3821, -- Gold
 
@@ -33,9 +38,14 @@ Looter.Options = {
 		3862, -- Amethyst
 		3861 -- Citrine
 		},
+
+	-- Container of where to place all the loot
     ["containerID"] = UO.BackpackID,
+
+    -- Distance from your character to seek corpses
     ["distance"] = 2,
 
+    -- Use skinning looter for corpses around
     ["useSkinning"] = true
 }
 
@@ -58,8 +68,15 @@ Looter.Run = function()
             		UOExt.Managers.SkinningManager.CutAndLoot(corps)
             	end
 
-        		-- Find items in corps and extract correct ones
-        		local items = World().WithType(Looter.Options.lootItems).InContainer(corps.ID).Items
+            	local items = {}
+
+            	if(string.find(corps.Name, UO.CharName))then
+            		-- Its your own body! Loot all
+            		items = World().InContainer(corps.ID).Items
+            	else
+            		-- Any other body. Use selected types.
+        			items = World().WithType(Looter.Options.lootItems).InContainer(corps.ID).Items
+            	end
 
         		print("Found items to loot: " .. #items)
 
