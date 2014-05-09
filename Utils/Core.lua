@@ -53,3 +53,46 @@ UOExt.Core.ShowMessageBox = function(message, title, button)
 	form.Title = title
 	form.Show(message)
 end
+
+-- ############################################
+-- Utilities for tables
+-- ############################################
+
+UOExt.TableUtils = UOExt.TableUtils or {}
+
+UOExt.TableUtils.GetKeys = function(array)
+	local temp = {}
+	for k,v in pairs(array) do
+		table.insert(temp, k)
+	end
+
+	return temp
+end
+
+UOExt.TableUtils.GetValues = function(array)
+	local temp = {}
+	for k,v in pairs(array) do
+		table.insert(temp, v)
+	end
+
+	return temp
+end
+
+UOExt.TableUtils.CombineKeyWithValue = function(array, delimeter)
+	local temp = {}
+	for k,v in pairs(array) do
+		table.insert(temp, (k..delimeter..v))
+	end
+
+	return temp
+end
+
+UOExt.TableUtils.KeyExists = function(array, key)
+	for k,v in pairs(array) do
+		if(tostring(key) == tostring(k)) then
+			return true
+		end
+	end
+
+	return false
+end
