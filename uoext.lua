@@ -1,3 +1,6 @@
+--- UOEXT Dispatcher file - it combines all libraries together
+-- @module UOExt
+
 -- Core & Utilities
 dofile(".\\Utils\\Core.lua")
 dofile(".\\Utils\\Config.lua")
