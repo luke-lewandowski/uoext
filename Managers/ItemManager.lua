@@ -1,5 +1,5 @@
 --- Item Manager - contains all methods to do with managing items.
--- @module UOExt.Manager.ItemManager
+-- @module UOExt.Managers.ItemManager
 
 dofile(".\\..\\Lib\\FluentUO\\FluentUO.lua")
 

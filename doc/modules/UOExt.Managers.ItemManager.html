@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>UOExt documentation</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>UOExt</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>UOExt.Managers.ItemManager</strong></li>
+  <li><a href="../modules/UOExt.Managers.SkinningManager.html">UOExt.Managers.SkinningManager</a></li>
+  <li><a href="../modules/UOExt.Structs.LimitedStack.html">UOExt.Structs.LimitedStack</a></li>
+  <li><a href="../modules/UOExt.html">UOExt</a></li>
+  <li><a href="../modules/UOExt.Config.html">UOExt.Config</a></li>
+  <li><a href="../modules/UOExt.Core.html">UOExt.Core</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>UOExt.Managers.ItemManager</code></h1>
+<p>Item Manager - contains all methods to do with managing items.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.GetItemFromBackpack">UOExt.Managers.ItemManager.GetItemFromBackpack (itemType)</a></td>
+	<td class="summary">GetItemFromBackpack
+ This method gets a single item from current's character backpack.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.GetItemFromContainer">UOExt.Managers.ItemManager.GetItemFromContainer (itemType, containerID)</a></td>
+	<td class="summary">GetItemFromContainer
+ This method gets a single item from specified container ID</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.GetItemsFromContainer">UOExt.Managers.ItemManager.GetItemsFromContainer (itemType, containerID)</a></td>
+	<td class="summary">GetItemsFromContainer
+ This method returns an array of items by type from specific container ID</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.GetCorpsesWithinRange">UOExt.Managers.ItemManager.GetCorpsesWithinRange (range)</a></td>
+	<td class="summary">GetCorposesWithinRange
+ This method returns an array of all corpses around the character within specific range</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.UseItemOnItem">UOExt.Managers.ItemManager.UseItemOnItem (useItem, onItem)</a></td>
+	<td class="summary">UseItemOnItem
+ Use specific item on item.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.MoveItemToContainer">UOExt.Managers.ItemManager.MoveItemToContainer (item, containerID)</a></td>
+	<td class="summary">MoveItemToContainer
+ This method moves specific item to a container</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.ItemManager.GetTargetID">UOExt.Managers.ItemManager.GetTargetID ()</a></td>
+	<td class="summary">GetTargetID
+ Use this method to capture a target ID from user
+ It will turn cursor for targeting cursor and returns target ID</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.GetItemFromBackpack"></a>
+    <strong>UOExt.Managers.ItemManager.GetItemFromBackpack (itemType)</strong>
+    </dt>
+    <dd>
+    GetItemFromBackpack
+ This method gets a single item from current's character backpack.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">itemType</span>
+         The item type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        first item or empty object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.GetItemFromContainer"></a>
+    <strong>UOExt.Managers.ItemManager.GetItemFromContainer (itemType, containerID)</strong>
+    </dt>
+    <dd>
+    GetItemFromContainer
+ This method gets a single item from specified container ID
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">itemType</span>
+         The item type
+        </li>
+        <li><span class="parameter">containerID</span>
+         ID of the container of where to look for item
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.GetItemsFromContainer"></a>
+    <strong>UOExt.Managers.ItemManager.GetItemsFromContainer (itemType, containerID)</strong>
+    </dt>
+    <dd>
+    GetItemsFromContainer
+ This method returns an array of items by type from specific container ID
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">itemType</span>
+         The item type
+        </li>
+        <li><span class="parameter">containerID</span>
+         ID of the container of where to look for item
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        returns an array of items or empty object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.GetCorpsesWithinRange"></a>
+    <strong>UOExt.Managers.ItemManager.GetCorpsesWithinRange (range)</strong>
+    </dt>
+    <dd>
+    GetCorposesWithinRange
+ This method returns an array of all corpses around the character within specific range
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+         Number of tiles from character to scan
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        a list of corpses (containers) around character or empty object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.UseItemOnItem"></a>
+    <strong>UOExt.Managers.ItemManager.UseItemOnItem (useItem, onItem)</strong>
+    </dt>
+    <dd>
+    UseItemOnItem
+ Use specific item on item.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">useItem</span>
+         Item from fluentUO to use
+        </li>
+        <li><span class="parameter">onItem</span>
+         Item from fluentUO to use on
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.MoveItemToContainer"></a>
+    <strong>UOExt.Managers.ItemManager.MoveItemToContainer (item, containerID)</strong>
+    </dt>
+    <dd>
+    MoveItemToContainer
+ This method moves specific item to a container
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">item</span>
+         Item from fluentUO to move
+        </li>
+        <li><span class="parameter">containerID</span>
+         ID number of a container to move item to
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if move has succedded, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.ItemManager.GetTargetID"></a>
+    <strong>UOExt.Managers.ItemManager.GetTargetID ()</strong>
+    </dt>
+    <dd>
+    GetTargetID
+ Use this method to capture a target ID from user
+ It will turn cursor for targeting cursor and returns target ID
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        targetID
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

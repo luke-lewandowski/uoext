@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>UOExt documentation</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>UOExt</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/UOExt.Managers.ItemManager.html">UOExt.Managers.ItemManager</a></li>
+  <li><a href="../modules/UOExt.Managers.SkinningManager.html">UOExt.Managers.SkinningManager</a></li>
+  <li><a href="../modules/UOExt.Structs.LimitedStack.html">UOExt.Structs.LimitedStack</a></li>
+  <li><a href="../modules/UOExt.html">UOExt</a></li>
+  <li><a href="../modules/UOExt.Config.html">UOExt.Config</a></li>
+  <li><strong>UOExt.Core</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>UOExt.Core</code></h1>
+<p>Core methods that have no particular connection</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Core.ConvertToInt">UOExt.Core.ConvertToInt (val)</a></td>
+	<td class="summary">This methods makes sure that value is 0 if nil.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Core.WaitForTarget">UOExt.Core.WaitForTarget ()</a></td>
+	<td class="summary">Blocks execution until cursor turns into target
+ It times out after 10 seconds and returns false</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Core.LoadFile">UOExt.Core.LoadFile (filename)</a></td>
+	<td class="summary">Load file at specific location</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Core.SaveFile">UOExt.Core.SaveFile (filename)</a></td>
+	<td class="summary">Save file at specific location with specified content</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.TableUtils.GetKeys">UOExt.TableUtils.GetKeys (array)</a></td>
+	<td class="summary">Get keys for a specific array/table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.TableUtils.GetValues">UOExt.TableUtils.GetValues (array)</a></td>
+	<td class="summary">Gets values of specific array</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.TableUtils.CombineKeyWithValue">UOExt.TableUtils.CombineKeyWithValue (array, delimeter)</a></td>
+	<td class="summary">Combine key with value with a delimeter and return as table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.TableUtils.KeyExists">UOExt.TableUtils.KeyExists (array, key)</a></td>
+	<td class="summary">Checks if following key exists in an array</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.TableUtils">UOExt.TableUtils</a></td>
+	<td class="summary">Utilities for tables</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.Core.ConvertToInt"></a>
+    <strong>UOExt.Core.ConvertToInt (val)</strong>
+    </dt>
+    <dd>
+    This methods makes sure that value is 0 if nil.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+         number value to be checked and casted
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number or 0 if value wasn't castable to a number.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Core.WaitForTarget"></a>
+    <strong>UOExt.Core.WaitForTarget ()</strong>
+    </dt>
+    <dd>
+    Blocks execution until cursor turns into target
+ It times out after 10 seconds and returns false
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if target cursor is showing or false if timed out without target cursor.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Core.LoadFile"></a>
+    <strong>UOExt.Core.LoadFile (filename)</strong>
+    </dt>
+    <dd>
+    Load file at specific location
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+         path to a file to read.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        content of file or nil.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Core.SaveFile"></a>
+    <strong>UOExt.Core.SaveFile (filename)</strong>
+    </dt>
+    <dd>
+    Save file at specific location with specified content
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+         path to file to save
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        content or nil if unable to save
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.TableUtils.GetKeys"></a>
+    <strong>UOExt.TableUtils.GetKeys (array)</strong>
+    </dt>
+    <dd>
+    Get keys for a specific array/table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         to get keys off
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        an array of keys of given table.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.TableUtils.GetValues"></a>
+    <strong>UOExt.TableUtils.GetValues (array)</strong>
+    </dt>
+    <dd>
+    Gets values of specific array
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         to get values off
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        an array of values
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.TableUtils.CombineKeyWithValue"></a>
+    <strong>UOExt.TableUtils.CombineKeyWithValue (array, delimeter)</strong>
+    </dt>
+    <dd>
+    Combine key with value with a delimeter and return as table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         table to combine
+        </li>
+        <li><span class="parameter">delimeter</span>
+         character to use as a delimeter
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        an array of combines key with value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.TableUtils.KeyExists"></a>
+    <strong>UOExt.TableUtils.KeyExists (array, key)</strong>
+    </dt>
+    <dd>
+    Checks if following key exists in an array
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">array</span>
+         to be checked
+        </li>
+        <li><span class="parameter">key</span>
+         to be searched for
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if found, false otherwise
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.TableUtils"></a>
+    <strong>UOExt.TableUtils</strong>
+    </dt>
+    <dd>
+    Utilities for tables
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

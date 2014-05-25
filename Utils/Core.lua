@@ -1,4 +1,5 @@
 --- Core methods that have no particular connection
+-- @module UOExt.Core
 
 UOExt = UOExt or {}
 UOExt.Core = UOExt.Core or {}

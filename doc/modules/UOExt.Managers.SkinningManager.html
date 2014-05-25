@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>UOExt documentation</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>UOExt</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/UOExt.Managers.ItemManager.html">UOExt.Managers.ItemManager</a></li>
+  <li><strong>UOExt.Managers.SkinningManager</strong></li>
+  <li><a href="../modules/UOExt.Structs.LimitedStack.html">UOExt.Structs.LimitedStack</a></li>
+  <li><a href="../modules/UOExt.html">UOExt</a></li>
+  <li><a href="../modules/UOExt.Config.html">UOExt.Config</a></li>
+  <li><a href="../modules/UOExt.Core.html">UOExt.Core</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>UOExt.Managers.SkinningManager</code></h1>
+<p>Skinning manager</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.FindKnife">UOExt.Managers.SkinningManager.FindKnife ()</a></td>
+	<td class="summary">Finds knife in the backpack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.FindScissors">UOExt.Managers.SkinningManager.FindScissors ()</a></td>
+	<td class="summary">Finds scissors in the backpack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.FindCorpses">UOExt.Managers.SkinningManager.FindCorpses ()</a></td>
+	<td class="summary">Finds corpses around character within distance specified in options</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.GetHides">UOExt.Managers.SkinningManager.GetHides (containerID)</a></td>
+	<td class="summary">Gets all hides a container</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.CutCorps">UOExt.Managers.SkinningManager.CutCorps (corpsID, knifeItem)</a></td>
+	<td class="summary">Cut cut specific corpses with knife</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.CutHides">UOExt.Managers.SkinningManager.CutHides (containerID, scissorsItem)</a></td>
+	<td class="summary">Cut hides in specific container</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.CutAndLoot">UOExt.Managers.SkinningManager.CutAndLoot (fluentUOItem)</a></td>
+	<td class="summary">Cut and loot hides from corpsItem</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.Run">UOExt.Managers.SkinningManager.Run ()</a></td>
+	<td class="summary">Run this method if you simply want to find all corpses, cut them and loot them.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager.Options">UOExt.Managers.SkinningManager.Options</a></td>
+	<td class="summary">Set of default options for Skinning Manager to operate on</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.Managers.SkinningManager">UOExt.Managers.SkinningManager</a></td>
+	<td class="summary">Skinning Manager</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.FindKnife"></a>
+    <strong>UOExt.Managers.SkinningManager.FindKnife ()</strong>
+    </dt>
+    <dd>
+    Finds knife in the backpack
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fluentUOItem an object or empty table.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.FindScissors"></a>
+    <strong>UOExt.Managers.SkinningManager.FindScissors ()</strong>
+    </dt>
+    <dd>
+    Finds scissors in the backpack
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fluentUOItem an object or empty table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.FindCorpses"></a>
+    <strong>UOExt.Managers.SkinningManager.FindCorpses ()</strong>
+    </dt>
+    <dd>
+    Finds corpses around character within distance specified in options
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.GetHides"></a>
+    <strong>UOExt.Managers.SkinningManager.GetHides (containerID)</strong>
+    </dt>
+    <dd>
+    Gets all hides a container
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">containerID</span>
+         container ID of where to look for hides
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fluentUOItemp[] array of items found in container or empty table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.CutCorps"></a>
+    <strong>UOExt.Managers.SkinningManager.CutCorps (corpsID, knifeItem)</strong>
+    </dt>
+    <dd>
+    Cut cut specific corpses with knife
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">corpsID</span>
+         a corps ID (number)
+        </li>
+        <li><span class="parameter">knifeItem</span>
+         fluentUO knife object (or anything to use on corpses)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.CutHides"></a>
+    <strong>UOExt.Managers.SkinningManager.CutHides (containerID, scissorsItem)</strong>
+    </dt>
+    <dd>
+    Cut hides in specific container
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">containerID</span>
+         a container ID
+        </li>
+        <li><span class="parameter">scissorsItem</span>
+         fluentUO scissors item (or anything to use on hides)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.CutAndLoot"></a>
+    <strong>UOExt.Managers.SkinningManager.CutAndLoot (fluentUOItem)</strong>
+    </dt>
+    <dd>
+    Cut and loot hides from corpsItem
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fluentUOItem</span>
+         corps to loot from. (Note: It has to be fluentUO object not just an ID!)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.Run"></a>
+    <strong>UOExt.Managers.SkinningManager.Run ()</strong>
+    </dt>
+    <dd>
+    Run this method if you simply want to find all corpses, cut them and loot them.  It uses all methods above.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager.Options"></a>
+    <strong>UOExt.Managers.SkinningManager.Options</strong>
+    </dt>
+    <dd>
+    Set of default options for Skinning Manager to operate on
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">hideContainer</span>
+         Where hides will be placed. Default is backpack.
+        </li>
+        <li><span class="parameter">knifeType</span>
+         Knife to use for cutting. Default is dagger.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UOExt.Managers.SkinningManager"></a>
+    <strong>UOExt.Managers.SkinningManager</strong>
+    </dt>
+    <dd>
+    Skinning Manager
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
