@@ -1,3 +1,7 @@
+
+--- Item Manager - contains all methods to do with managing items.
+-- @module Manager.ItemManager
+
 dofile(".\\..\\Lib\\FluentUO\\FluentUO.lua")
 
 -- Namespaces
@@ -5,6 +9,10 @@ UOExt = UOExt or {}
 UOExt.Managers = UOExt.Managers or {}
 UOExt.Managers.ItemManager = UOExt.Managers.ItemManager or {}
 
+--- GetItemFromBackpack
+-- This method gets a single item from current's character backpack.
+-- @param itemType The item type
+-- @return first item or empty object
 UOExt.Managers.ItemManager.GetItemFromBackpack = function(itemType)
     local item = Backpack().WithType(itemType).Items
 
@@ -15,6 +23,10 @@ UOExt.Managers.ItemManager.GetItemFromBackpack = function(itemType)
     return {}
 end
 
+--- GetItemFromContainer
+-- This method gets a single item from specified container ID
+-- @param itemType The item type
+-- @param containerID ID of the container of where to look for item
 UOExt.Managers.ItemManager.GetItemFromContainer = function(itemType, containerID)
     local items = UOExt.Managers.ItemManager.GetItemsFromContainer(itemType, containerID)
 
@@ -25,6 +37,11 @@ UOExt.Managers.ItemManager.GetItemFromContainer = function(itemType, containerID
     return {}
 end
 
+--- GetItemsFromContainer
+-- This method returns an array of items by type from specific container ID
+-- @param itemType The item type
+-- @param containerID ID of the container of where to look for item
+-- @return returns an array of items or empty object
 UOExt.Managers.ItemManager.GetItemsFromContainer = function(itemType, containerID)
     local items = World().WithType(itemType).InContainer(containerID).Items
 
@@ -35,6 +52,10 @@ UOExt.Managers.ItemManager.GetItemsFromContainer = function(itemType, containerI
     return {}
 end
 
+--- GetCorposesWithinRange
+-- This method returns an array of all corpses around the character within specific range
+-- @param range Number of tiles from character to scan
+-- @return a list of corpses (containers) around character or empty object
 UOExt.Managers.ItemManager.GetCorpsesWithinRange = function(range)
   local corpses = Ground().WithType(8198).InRange(range).Items
       
@@ -45,6 +66,10 @@ UOExt.Managers.ItemManager.GetCorpsesWithinRange = function(range)
   return {}
 end
 
+--- UseItemOnItem
+-- Use specific item on item. 
+-- @param useItem Item from fluentUO to use
+-- @param onItem Item from fluentUO to use on
 UOExt.Managers.ItemManager.UseItemOnItem = function(useItem, onItem)
   if(useItem ~= nil and onItem ~= nil) then
     local tempID = UO.LTargetID
@@ -56,6 +81,11 @@ UOExt.Managers.ItemManager.UseItemOnItem = function(useItem, onItem)
   end
 end
 
+--- MoveItemToContainer
+-- This method moves specific item to a container
+-- @param item Item from fluentUO to move
+-- @param containerID ID number of a container to move item to
+-- @return true if move has succedded, false otherwise
 UOExt.Managers.ItemManager.MoveItemToContainer = function(item, containerID)
   if(item ~= nil and containerID ~= nil) then
     item.Drag()
@@ -67,6 +97,10 @@ UOExt.Managers.ItemManager.MoveItemToContainer = function(item, containerID)
   return false
 end
 
+--- GetTargetID
+-- Use this method to capture a target ID from user
+-- It will turn cursor for targeting cursor and returns target ID
+-- @return targetID
 UOExt.Managers.ItemManager.GetTargetID = function()
   local current = UO.LTargetID
   UO.LTargetID = 0
