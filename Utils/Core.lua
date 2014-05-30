@@ -114,3 +114,36 @@ UOExt.TableUtils.KeyExists = function(array, key)
 
 	return false
 end
+
+
+--- Key manager holds all methods for managing key presses
+UOExt.KeyManager = UOExt.KeyManager or {}
+
+--- Contains all allowed keys
+-- @name UOExt.KeyManager.Keys
+UOExt.KeyManager.Keys = {'ESC', 'BACK', 'TAB', 'ENTER', 'CAPS', 'SPACE', 'PGDN', 'PGUP', 'END', 'HOME',
+   'LEFT', 'RIGHT', 'UP', 'DOWN', 'INS', 'DEL', 'NUM', 'SCROLL', 'CTRL', 'ALT', 'SHIFT', 'A',
+   'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+   'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
+
+--- Checks if two butons are currently pressed
+-- @name UOExt.KeyManager.IfKeyPressed
+-- @param keyOne key one of the combo (usually modifier such as SHIFT)
+-- @param keyTwo key two of the combo
+-- @return true if combination is currently pressed, or false
+UOExt.KeyManager.IfKeyPressed = function(keyOne,keyTwo) 
+local keyOneIndex,keyTwoIndex
+  
+for i = 1,#UOExt.KeyManager.Keys,1 do
+    if keyOne == UOExt.KeyManager.Keys[i] then
+       keyOneIndex = i
+    end
+    if keyTwo == UOExt.KeyManager.Keys[i] then
+       keyTwoIndex = i
+    end
+end
+
+ 
+    if getkey(UOExt.KeyManager.Keys[keyOneIndex]) and getkey(UOExt.KeyManager.Keys[keyTwoIndex]) then print(UOExt.KeyManager.Keys[keyOneIndex]..UOExt.KeyManager.Keys[keyTwoIndex]) wait(100) return true end
+    return false
+end   
