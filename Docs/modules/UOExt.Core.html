@@ -65,6 +65,10 @@
 	<td class="summary">This methods makes sure that value is 0 if nil.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#UOExt.Core.Trim">UOExt.Core.Trim (s)</a></td>
+	<td class="summary">Trim string from leading and trailing spaces</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#UOExt.Core.WaitForTarget">UOExt.Core.WaitForTarget ()</a></td>
 	<td class="summary">Blocks execution until cursor turns into target
  It times out after 10 seconds and returns false</td>
@@ -93,12 +97,24 @@
 	<td class="name" nowrap><a href="#UOExt.TableUtils.KeyExists">UOExt.TableUtils.KeyExists (array, key)</a></td>
 	<td class="summary">Checks if following key exists in an array</td>
 	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.KeyManager.Keys">UOExt.KeyManager.Keys ()</a></td>
+	<td class="summary">Contains all allowed keys</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.KeyManager.IfKeyPressed">UOExt.KeyManager.IfKeyPressed (keyOne, keyTwo)</a></td>
+	<td class="summary">Checks if two butons are currently pressed</td>
+	</tr>
 </table>
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#UOExt.TableUtils">UOExt.TableUtils</a></td>
 	<td class="summary">Utilities for tables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UOExt.KeyManager">UOExt.KeyManager</a></td>
+	<td class="summary">Key manager holds all methods for managing key presses</td>
 	</tr>
 </table>
 
@@ -127,6 +143,31 @@
     <ol>
 
         number or 0 if value wasn't castable to a number.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.Core.Trim"></a>
+    <strong>UOExt.Core.Trim (s)</strong>
+    </dt>
+    <dd>
+    Trim string from leading and trailing spaces
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+         string to trim
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        trimmed string
     </ol>
 
 
@@ -309,6 +350,48 @@
 
 
 </dd>
+    <dt>
+    <a name = "UOExt.KeyManager.Keys"></a>
+    <strong>UOExt.KeyManager.Keys ()</strong>
+    </dt>
+    <dd>
+    Contains all allowed keys
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.KeyManager.IfKeyPressed"></a>
+    <strong>UOExt.KeyManager.IfKeyPressed (keyOne, keyTwo)</strong>
+    </dt>
+    <dd>
+    Checks if two butons are currently pressed
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keyOne</span>
+         key one of the combo (usually modifier such as SHIFT)
+        </li>
+        <li><span class="parameter">keyTwo</span>
+         key two of the combo
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if combination is currently pressed, or false
+    </ol>
+
+
+
+
+</dd>
 </dl>
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
@@ -318,6 +401,20 @@
     </dt>
     <dd>
     Utilities for tables
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "UOExt.KeyManager"></a>
+    <strong>UOExt.KeyManager</strong>
+    </dt>
+    <dd>
+    Key manager holds all methods for managing key presses
 
 
 

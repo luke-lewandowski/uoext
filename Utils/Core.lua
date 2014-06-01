@@ -11,6 +11,13 @@ UOExt.Core.ConvertToInt = function(val)
     return tonumber(val) or 0
 end
 
+--- Trim string from leading and trailing spaces
+-- @param s string to trim
+-- @return trimmed string
+UOExt.Core.Trim = function(s)
+  return s:match'^()%s*$' and '' or s:match'^%s*(.*%S)'
+end
+
 --- Blocks execution until cursor turns into target
 -- It times out after 10 seconds and returns false
 -- @return true if target cursor is showing or false if timed out without target cursor.
