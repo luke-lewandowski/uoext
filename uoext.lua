@@ -10,6 +10,7 @@ dofile(".\\Lib\\FluentUO\\FluentUO.lua")
 dofile(".\\Lib\\GetHitBarLife\\GetHitBarLife.lua")
 dofile(".\\Lib\\json4lua\\json4lua.lua")
 dofile(".\\Lib\\kalocr\\kalocr.lua")
+dofile(".\\Lib\\kalinex_journal\\journal.lua")
 
 -- Structures
 dofile(".\\Structs\\LimitedStack.lua")
