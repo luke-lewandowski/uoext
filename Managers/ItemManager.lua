@@ -74,7 +74,7 @@ UOExt.Managers.ItemManager.UseItemOnItem = function(useItem, onItem)
     local tempID = UO.LTargetID
     UO.LTargetID = onItem.ID
     useItem.Use()
-    FluentUO.Action.WaitForAction(false)
+    UOExt.Core.WaitForTarget()
     UO.Macro(22, 0) -- Last target
     UO.LTargetID = tempID
   end

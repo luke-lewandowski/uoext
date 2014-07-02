@@ -23,10 +23,11 @@ end
 -- @return true if target cursor is showing or false if timed out without target cursor.
 UOExt.Core.WaitForTarget = function()
 	local timeout = 10000 -- 10 seconds
+	local checkTime = 50
 
-	for i=1,(timeout / 600) do
+	for i=1,(timeout / checkTime) do
 		if(UO.TargCurs) then return true end
-		wait(600)
+		wait(checkTime)
 	end
 
 	return false
@@ -153,4 +154,27 @@ end
  
     if getkey(UOExt.KeyManager.Keys[keyOneIndex]) and getkey(UOExt.KeyManager.Keys[keyTwoIndex]) then print(UOExt.KeyManager.Keys[keyOneIndex]..UOExt.KeyManager.Keys[keyTwoIndex]) wait(100) return true end
     return false
-end   
+end  
+
+function spairs(t, order)
+    -- collect the keys
+    local keys = {}
+    for k in pairs(t) do keys[#keys+1] = k end
+
+    -- if order function given, sort by it by passing the table and keys a, b,
+    -- otherwise just sort the keys 
+    if order then
+        table.sort(keys, function(a,b) return order(t, a, b) end)
+    else
+        table.sort(keys)
+    end
+
+    -- return the iterator function
+    local i = 0
+    return function()
+        i = i + 1
+        if keys[i] then
+            return keys[i], t[keys[i]]
+        end
+    end
+end 
