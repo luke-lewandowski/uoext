@@ -63,6 +63,20 @@ UOExt.Core.SaveFile = function(filename, content)
 	end
 end
 
+-- ############################################
+-- Math functions
+-- ############################################
+
+--- Math functions for math
+UOExt.Math = UOExt.Math or {}
+
+--- Rounds number to specified amount of decimal places
+-- @param number is the int to be rounded, decimal is the amount of decimal places to round to
+-- @return the closest int based on decimal input
+function UOExt.Math.Round(number, decimal)
+	local multiplier = 10^(decimal or 0)
+	return math.floor(number * multiplier + 0.5) / multiplier
+end
 
 -- ############################################
 -- Utilities for tables
