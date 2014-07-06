@@ -4,6 +4,7 @@
 -- Core & Utilities
 dofile(".\\Utils\\Core.lua")
 dofile(".\\Utils\\Config.lua")
+dofile(".\\Utils\\Server.lua")
 
 -- External libraries
 dofile(".\\Lib\\FluentUO\\FluentUO.lua")
