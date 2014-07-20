@@ -6,7 +6,6 @@ PouchFrenzy = PouchFrenzy or {}
 -- Mode 0 = make many pouches
 -- Mode 1 = make one pouch
 -- Amount of reagents to move per each pouch
-
 -- Don't touch anything below this line
 -------------------------------------
 -- Reagent Table
@@ -27,96 +26,92 @@ PouchFrenzy.Options = {
 	sourcePouch = 0,
 	destPouch = 0,
 	amountPouch = 0,
+	cancel = false,
+	maxAmount = 0,
 	pouchIDs = {}
 }
 -- 
 -------------------------------------
 -- Scan all items and count regs/pouches
-PouchFrenzy.getAllItems = function(bagID,isDest)
-	local itemCount = 0
-	local scanIt = UO.ScanItems(false) 
-	local allItems = false
-
-	while itemCount ~= scanIt do
-	 local ID,Type,Kind,ContID,X,Y,Stack,Rep,Col = UO.GetItem(itemCount) 
-	 
-	   -- Make sure the items are in source pouch
-	   if(ContID == bagID) then
-			for key, value in pairs(PouchFrenzy.Options.reagentTable) do 
-				if(Type == value.TYPE and isDest == false) then
-				    local name, info = UO.Property(ID)  
-					value.ID = ID
-					value.NAME = name
-					value.AMOUNT = string.match(name, "%d+")
+PouchFrenzy.getAllItems = function(bagID)
+	-- Get all items in bag
+	local items = World().InContainer(bagID).Items
+	local validate = true
+	
+	-- Filter items
+	for k,item in pairs(items) do
+		for key, value in pairs(PouchFrenzy.Options.reagentTable) do 
+		
+			-- If its not a pouch for containers (many reagent filling) then add following items into reagent table
+			if(item.Type == value.TYPE) then  
+				value.ID = item.ID
+				local itemName = item.Active.Name()
+				
+				--Make sure to get the name so that it can calculate the amount properly.
+				while validate == true do
+					if (value.NAME ~= "" and value.NAME ~= nil) then
+						value.NAME = itemName
+						validate = false
+					else
+						value.NAME = item.Active.Name()
+					end
 				end
+				
+				value.AMOUNT = string.match(item.Name, "%d+")
+				validate = true
 			end
 			
-			if(Type == 3702 and isDest == true) then
-				table.insert(PouchFrenzy.Options.pouchIDs,ID)
-			end
-	   
-	   end
-	   itemCount = itemCount + 1
-	end
-    
-end
--- 
--------------------------------------
--- Wait timer for cursor selecting
-PouchFrenzy.waitForCurs = function(timeToWait)
-	timeCounter = 0
-	while(UO.TargCurs == true) do
-		wait(100)
-		timeCounter = timeCounter + 100
-		if(timeCounter == timeToWait) then
-			UO.SysMessage("You failed to select anything.")
-			UO.SysMessage("Select the pouch again, you have 6 seconds.")
-			UO.TargCurs = true
-			PouchFrenzy.waitForCurs(timeToWait)
-		end
-	end
-end
--- 
--------------------------------------
--- Wait timer for bag opening
-PouchFrenzy.waitForPouch = function(timeToWait)
-	timeCounter = 0
-	while(UO.ContID ~= UO.LObjectID) do 
-		wait(100)
-		timeCounter = timeCounter + 100
-		if(timeCounter == timeToWait) then
-			UO.SysMessage("Could not open pouch.")
-			UO.SysMessage("Restart and make sure pouch is reachable.")
-			UO.TargCurs = true
-			PouchFrenzy.waitForPouch(timeToWait)
-		end
 
+			
+		end
+		-- Check if the container has pouches
+		if(item.Type == 3702 and PouchFrenzy.Options.destPouch ~= 0) then
+			table.insert(PouchFrenzy.Options.pouchIDs,item.ID)
+		end
 	end
+	
 end
 -- 
 -------------------------------------
 -- Put reagents into bags
-PouchFrenzy.makePouch = function(many)
-	if(many == true) then
-		local num = 1
-		for k, v in pairs(PouchFrenzy.Options.pouchIDs) do 
-			for key, value in pairs(PouchFrenzy.Options.reagentTable) do 
-				UO.Drag(value.ID, PouchFrenzy.Options.amountToMove)
-				UO.DropC(v,50,50)
-				wait(1000)
-			end
-			PouchFrenzy.getAllItems(PouchFrenzy.Options.sourcePouch, false)
-			UO.SysMessage("Pouch number: ".. num .. " complete.")
-			num = num + 1
-		end
-	else		
-		for key, value in pairs(PouchFrenzy.Options.reagentTable) do 
-			UO.Drag(value.ID, PouchFrenzy.Options.amountToMove)
-			UO.DropC(PouchFrenzy.Options.destPouch,50,50)
-			wait(1000)
+PouchFrenzy.makePouch = function()
+	local num = 1
+	
+	if (#PouchFrenzy.Options.pouchIDs == 0) then
+		table.insert(PouchFrenzy.Options.pouchIDs,PouchFrenzy.Options.destPouch)
+	end
+
+	-- If the user has too many pouches for the max amount, cut them off.
+	if(#PouchFrenzy.Options.pouchIDs > PouchFrenzy.Options.maxAmount) then
+		local amountToPop = #PouchFrenzy.Options.pouchIDs - PouchFrenzy.Options.maxAmount
+		for i = 1,amountToPop,1 do 
+			table.remove(PouchFrenzy.Options.pouchIDs)
 		end
 	end
+	
+	for k, v in pairs(PouchFrenzy.Options.pouchIDs) do 
+		for key, value in pairs(PouchFrenzy.Options.reagentTable) do
+			UO.Drag(tonumber(value.ID),tonumber(PouchFrenzy.Options.amountToMove))
+			UO.DropC(tonumber(v))
+			wait(gpad(600))
+		end
+		PouchFrenzy.getAllItems(PouchFrenzy.Options.sourcePouch)
+		UO.SysMessage("Pouch number: ".. num .. " complete.")
+		num = num + 1
+	end
+		
 	UO.SysMessage("All pouches complete.")
+end
+-- 
+-------------------------------------
+-- Check if its a pouch
+PouchFrenzy.checkContainer = function(container)
+	local targetType = World().WithID(container).Items[1].Type
+
+	if(targetType ~= 3701 and targetType ~= 3702) then
+		PouchFrenzy.Options.cancel = true
+		UO.SysMessage("That's not a pouch or a backpack.")
+	end
 end
 -- 
 -------------------------------------
@@ -125,83 +120,65 @@ PouchFrenzy.showAmount = function()
 	local regMntTab = {}
 	print("Reagents in source pouch")
 	for key, value in pairs(PouchFrenzy.Options.reagentTable) do 
-		print(value.NAME)
 		table.insert(regMntTab, value.AMOUNT)
+		print(value.NAME)
 	end
-	UO.SysMessage("With ".. PouchFrenzy.Options.amountToMove .." reagents per bag you can make a total of " .. math.floor(math.min(unpack(regMntTab))/PouchFrenzy.Options.amountToMove) .." bags.")
+	
+	PouchFrenzy.Options.maxAmount = math.floor(math.min(unpack(regMntTab))/tonumber(PouchFrenzy.Options.amountToMove))
+	
+	UO.SysMessage("With ".. PouchFrenzy.Options.amountToMove .." reagents per bag you can make a total of " .. PouchFrenzy.Options.maxAmount .." bags.")
+	
+	if(PouchFrenzy.Options.maxAmount == 0) then
+		UO.SysMessage("Not enough reagents.")
+		PouchFrenzy.Options.cancel = true
+	end
 	
 end
 -- 
 -------------------------------------
 -- Main start of script
-PouchFrenzy.Run = function(mode)
-	if(mode == 0) then
+PouchFrenzy.Run = function()
+	while(PouchFrenzy.Options.cancel == false) do
+	
 		-- Select reagent pouch
-		UO.SysMessage("Select the reagent source pouch, you have 6 seconds.")
-		UO.TargCurs = true
-		PouchFrenzy.waitForCurs(6000)
-
-		-- Set the pouch as last Object
-		UO.LObjectID = UO.LTargetID
-		PouchFrenzy.Options.sourcePouch = UO.LTargetID
-
-		-- Open it
-		UO.Macro(17,0)
-
-		-- Check it it actually opens otherwise time out after 6 seconds.
-		PouchFrenzy.waitForPouch(6000)
-
-		-- Get array of items from source
-		UO.SysMessage("Creating array of regs.")
-		PouchFrenzy.getAllItems(PouchFrenzy.Options.sourcePouch, false)
+		UO.SysMessage("Select the reagent source pouch.")
 		
+		-- Check if cancelled select
+		PouchFrenzy.Options.sourcePouch = UOExt.Managers.ItemManager.GetTargetID()
+		PouchFrenzy.checkContainer(PouchFrenzy.Options.sourcePouch)
+		if(PouchFrenzy.Options.cancel == true) then
+			break
+		end
+		
+		-- Get array of items from source
+		UO.SysMessage("Creating array of reagents.")
+		PouchFrenzy.getAllItems(PouchFrenzy.Options.sourcePouch)
+
 		-- Print current amount and how many bags it can make
 		PouchFrenzy.showAmount()
 		
-		-- Select dest pouch
-		UO.SysMessage("Select the destination pouch, you have 6 seconds.")
-		UO.TargCurs = true
-		PouchFrenzy.waitForCurs(6000)
-
-		-- Set the destPouch var
-		PouchFrenzy.Options.destPouch = UO.LTargetID
-		PouchFrenzy.getAllItems(PouchFrenzy.Options.destPouch, true)
-		-- Make the pouches
+		-- Check if cancelled due to lack of reagents
+		if(PouchFrenzy.Options.cancel == true) then
+			break
+		end
 		
-		UO.SysMessage("Making pouches.")
-		PouchFrenzy.makePouch(true)
-
-	else
-		-- Select reagent pouch
-		UO.SysMessage("Select the reagent source pouch, you have 6 seconds.")
-		UO.TargCurs = true
-		PouchFrenzy.waitForCurs(6000)
-
-		-- Set the pouch as last Object
-		UO.LObjectID = UO.LTargetID
-		PouchFrenzy.Options.sourcePouch = UO.LTargetID
-
-		-- Open it
-		UO.Macro(17,0)
-
-		-- Check it it actually opens otherwise time out after 6 seconds.
-		PouchFrenzy.waitForPouch(6000)
-
-		-- Get array of items from source
-		UO.SysMessage("Creating array of regs.")
-		PouchFrenzy.getAllItems(PouchFrenzy.Options.sourcePouch, false)
-		PouchFrenzy.showAmount()
 		-- Select dest pouch
-		UO.SysMessage("Select the destination pouch, you have 6 seconds.")
-		UO.TargCurs = true
-		PouchFrenzy.waitForCurs(6000)
-
+		UO.SysMessage("Select the destination pouch.")
+		PouchFrenzy.Options.destPouch = UOExt.Managers.ItemManager.GetTargetID()
+		PouchFrenzy.checkContainer(PouchFrenzy.Options.destPouch)
+		if(PouchFrenzy.Options.cancel == true) then
+			break
+		end
+		
 		-- Set the destPouch var
-		PouchFrenzy.Options.destPouch = UO.LTargetID
-
+		PouchFrenzy.getAllItems(PouchFrenzy.Options.destPouch)
+		
 		-- Make the pouches
-		PouchFrenzy.makePouch(false)
-
+		UO.SysMessage("Making pouches...")
+		PouchFrenzy.makePouch()
+		
+		break
 	end
 
+	PouchFrenzy.Options.cancel = false
 end
