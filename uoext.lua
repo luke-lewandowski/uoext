@@ -12,6 +12,7 @@ dofile(".\\Lib\\GetHitBarLife\\GetHitBarLife.lua")
 dofile(".\\Lib\\json4lua\\json4lua.lua")
 dofile(".\\Lib\\kalocr\\kalocr.lua")
 dofile(".\\Lib\\kalinex_journal\\journal.lua")
+dofile(".\\Lib\\pouch_frenzy\\PouchFrenzy.lua")
 
 -- Structures
 dofile(".\\Structs\\LimitedStack.lua")
